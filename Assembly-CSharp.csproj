@@ -56,39 +56,25 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\02_Script\GamePlayScene\EnemyShip\TripleShot.cs" />
-    <Compile Include="Assets\02_Script\MainScene\UIController.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\Playable\PlayerSript.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Other\Lv1Controller.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\EnemyShip\RandomPathShip.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Other\ShopScript.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Other\Shopcontroller.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\GamplayControl\ApBarController.cs" />
-    <Compile Include="Assets\02_Script\02_ETC\Singleton.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\GamplayControl\OptionPanel.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\GamplayControl\SpawnerSC.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Other\AmoryController.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\EnemyShip\EBullet.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\GamplayControl\HPBar.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Other\BossBulletPath.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Enemy\BossBullet.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\EnemyShip\LinearPerShot.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\Playable\Bullet.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Enemy\Enemyship.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\EnemyShip\ChronoShip.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\EnemyShip\BouncingShip.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\EnemyShip\Kamikaze.cs" />
-    <Compile Include="Assets\02_Script\MainScene\ShipediaPanel.cs" />
-    <Compile Include="Assets\02_Script\LoadingScene\LoadingSC.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\GamplayControl\SceneDescription.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Other\BossHealthBar.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Other\HealthBar.cs" />
-    <Compile Include="Assets\02_Script\MainScene\ScrollviewController.cs" />
-    <Compile Include="Assets\02_Script\OldScript\Enemy\Boss1.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\EnemyShip\DualShot.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\GamplayControl\GameplayController.cs" />
-    <Compile Include="Assets\02_Script\GamePlayScene\GamplayControl\ExpController.cs" />
-    <Compile Include="Assets\02_Script\02_ETC\DataSC.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\TripleShot.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Player\PlayerSript.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\RandomPathShip.cs" />
+    <Compile Include="Assets\02_Script\02_Ultilities\Singleton.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\SpawnerSC.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\EBullet.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\LinearPerShot.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Player\PBullet.cs" />
+    <Compile Include="Assets\02_Script\02_Ultilities\DataSC.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\ChronoShip.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\BouncingShip.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\Kamikaze.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\Bullet.cs" />
+    <Compile Include="Assets\02_Script\02_UIs\LoadingSC.cs" />
+    <Compile Include="Assets\02_Script\02_UIs\MainMenuSC.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\EnemiesSC.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\DualShot.cs" />
+    <Compile Include="Assets\02_Script\02_UIs\GameplayController.cs" />
+    <Compile Include="Assets\02_Script\02_UIs\ArmorySC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -718,23 +704,23 @@
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Services.Analytics.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Analytics.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Purchasing.SecurityStub">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Analytics">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -745,11 +731,11 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
