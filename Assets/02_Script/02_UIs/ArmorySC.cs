@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArmorySC : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class ArmorySC : MonoBehaviour
     [SerializeField] List<GameObject> hpList = new List<GameObject>();
     [SerializeField] List<GameObject> spdList = new List<GameObject>();
     [SerializeField] List<GameObject> rechargeList = new List<GameObject>();
+
+    [SerializeField] Text curDmgPriceTxt;
+    [SerializeField] Text curHPPriceTxt;
+    [SerializeField] Text curSpdPriceTxt;
+    [SerializeField] Text curRegenPriceTxt;
 
     private int dmgIndex;
     private int hpIndex;
@@ -18,6 +24,11 @@ public class ArmorySC : MonoBehaviour
     private int hpCur;
     private int spdCur;
     private int rechargeCur;
+
+    private int curDmgPrice;
+    private int curhpPrice;
+    private int curspdPrice;
+    private int curRegenPrice;
     void Start()
     {
         dmgIndex = 0;
@@ -45,11 +56,6 @@ public class ArmorySC : MonoBehaviour
             rechargeList[i].SetActive(false);
         }
     }
-    void Update()
-    {
-
-    }
-
     #region gameplay handle
     void GetPlayer()
     {
@@ -81,27 +87,56 @@ public class ArmorySC : MonoBehaviour
         dmgIndex++;
         dmgList[dmgIndex].SetActive(true);
 
-        print("in dmg");
+        if(dmgIndex == 1)
+        {
+            curDmgPriceTxt.text = curDmgPrice.ToString();
+        }
+        else
+        {
+            curDmgPriceTxt.text = (curDmgPrice * dmgIndex * 10).ToString();
+        }
     }
     public void HealthUpHandle()
     {
         hpIndex++;
         hpList[hpIndex].SetActive(true);
 
-        print("in hp");
+        if (curhpPrice == 1)
+        {
+            curHPPriceTxt.text = curhpPrice.ToString();
+        }
+        else
+        {
+            curHPPriceTxt.text = (curhpPrice * curhpPrice * 10).ToString();
+        }
+
     }
     public void SpeedUpHandle()
     {
         spdIndex++;
         spdList[spdIndex].SetActive(true);
 
-        print("in spd");
+        if (spdIndex == 1)
+        {
+            curSpdPriceTxt.text = curspdPrice.ToString();
+        }
+        else
+        {
+            curSpdPriceTxt.text = (curspdPrice * spdIndex * 10).ToString();
+        }
     }
     public void RechargeUpHandle()
     {
         rechargeIndex++;
         rechargeList[rechargeIndex].SetActive(true);
 
-        print("in recharge");
+        if (rechargeIndex == 1)
+        {
+            curRegenPriceTxt.text = curRegenPrice.ToString();
+        }
+        else
+        {
+            curRegenPriceTxt.text = (curRegenPrice * rechargeIndex * 10).ToString();
+        }
     }
 }

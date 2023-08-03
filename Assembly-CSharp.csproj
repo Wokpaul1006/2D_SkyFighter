@@ -60,21 +60,23 @@
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Player\PlayerSript.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\RandomPathShip.cs" />
     <Compile Include="Assets\02_Script\02_Ultilities\Singleton.cs" />
-    <Compile Include="Assets\02_Script\02_GamePlayScene\SpawnerSC.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\SpawnerSC.cs" />
+    <Compile Include="Assets\02_Script\02_UIs\ShopSC.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\EBullet.cs" />
+    <Compile Include="Assets\02_Script\02_UIs\OptionSC.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\LinearPerShot.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Player\PBullet.cs" />
     <Compile Include="Assets\02_Script\02_Ultilities\DataSC.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\ChronoShip.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\BouncingShip.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\Kamikaze.cs" />
-    <Compile Include="Assets\02_Script\02_GamePlayScene\Bullet.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Player\Bullet.cs" />
+    <Compile Include="Assets\02_Script\02_UIs\ArmorySC.cs" />
     <Compile Include="Assets\02_Script\02_UIs\LoadingSC.cs" />
     <Compile Include="Assets\02_Script\02_UIs\MainMenuSC.cs" />
-    <Compile Include="Assets\02_Script\02_GamePlayScene\EnemiesSC.cs" />
+    <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\EnemiesSC.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\DualShot.cs" />
     <Compile Include="Assets\02_Script\02_UIs\GameplayController.cs" />
-    <Compile Include="Assets\02_Script\02_UIs\ArmorySC.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

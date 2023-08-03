@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class DataSC : Singleton<DataSC>
 {
-    private string nameFistPlay;
-    private string playerName;
-    private int playerHighscore;
+    public string nameFistPlay;
+    public string playerName;
+    public int playerHighscore;
+    private int curEnemies;
     private int hasPlayed; //Use this variable for check FirstPlay.
     void Start()
     {
@@ -31,6 +32,7 @@ public class DataSC : Singleton<DataSC>
     }
     private void SetNewPlayer()
     {
+        print("in set new player");
         if(Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
             nameFistPlay = "PlayerTest" ;
@@ -39,14 +41,16 @@ public class DataSC : Singleton<DataSC>
             nameFistPlay = "Player" + (Random.Range(100000, 30000)).ToString();
         }
 
-        PlayerPrefs.SetString("Player", nameFistPlay);
+        PlayerPrefs.SetString("PlayerName", nameFistPlay);
         PlayerPrefs.SetInt("Highscore", 0);
+        PlayerPrefs.SetInt("CurEnemies", 0);
     }
     public void LoadOldPlayer()
     {
         //This function load player information if there are not FIRST PLAY
         playerName = PlayerPrefs.GetString("PlayerName");
         playerHighscore = PlayerPrefs.GetInt("Highscore");
+        curEnemies = PlayerPrefs.GetInt("CurEnemies");
     }
     public void ClearPlayer() { PlayerPrefs.DeleteAll(); }
     #endregion

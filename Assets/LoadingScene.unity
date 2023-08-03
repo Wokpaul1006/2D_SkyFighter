@@ -863,7 +863,6 @@ MonoBehaviour:
   bg:
   - {fileID: 21300000, guid: 7941a6870cc295d4a854fb77ce33f3c7, type: 3}
   - {fileID: 21300000, guid: 6731886a1523a1d45b664527639f0fe7, type: 3}
-  - {fileID: 21300000, guid: 15eea3c0626be064ea02cecee35a1d76, type: 3}
   target: 1
 --- !u!1 &1380669995
 GameObject:

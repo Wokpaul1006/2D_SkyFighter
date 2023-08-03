@@ -23,7 +23,8 @@ public class GameplayController : MonoBehaviour
     {
         gpLevel = 1; //Min = 1; Max = ?
         SpawnPlayer();
-        OnCheckLevel(gpLevel);
+        OnShowLevel(gpLevel);
+        OnSelectEnemiesToSpawn();
         StartCoroutine(CountSec());
     }
 
@@ -36,23 +37,18 @@ public class GameplayController : MonoBehaviour
 
     #region Handle gameplay activity
     private void SpawnPlayer() => player = Instantiate(player, Vector3.zero, Quaternion.identity);
-    private void OnCheckLevel(int inputLvl)
-    {
-        lvlTxt.text = gpLevel.ToString();
-        spawn.SpawnPerShot();
-
-    }
+    private void OnShowLevel(int inputLvl) => lvlTxt.text = gpLevel.ToString();
     private void OnUpdateLevel()
     {
         if(enemiesKilled == 10)
         {
             gpLevel = 2;
-            OnCheckLevel(gpLevel);
+            OnShowLevel(gpLevel);
         }else if(enemiesKilled == gpLevel * 10)
         {
             gpLevel++;
             enemiesKilled = 0;
-            OnCheckLevel(gpLevel);
+            OnShowLevel(gpLevel);
         }
     }
     private void OnUpdatePlayerStatus()
@@ -101,52 +97,17 @@ public class GameplayController : MonoBehaviour
         sec = 0;
     }
     #endregion
-    
-    //void OnSpawn()
-    //{
-    //    if (inputLvl > 8)
-    //    {
-    //        spawn.CancelInvoke("SpawnChrono");
-    //        spawn.SpawnKamikaze();
-    //        spawn.SpawnPerShot();
-    //        spawn.SpawnDualShot();
-    //        spawn.SpawnConeShot();
-    //        spawn.SpawnDiagonal();
-    //        spawn.SpawnRandom();
-    //        spawn.SpawnChrono();
-    //    }
-    //    else
-    //    {
-    //        switch (inputLvl)
-    //        {
-    //            case 1:
-    //                spawn.SpawnKamikaze();
-    //                break;
-    //            case 2:
-    //                spawn.CancelInvoke("SpawnKamikaze");
-    //                spawn.SpawnPerShot();
-    //                break;
-    //            case 3:
-    //                spawn.CancelInvoke("SpawnPerShot");
-    //                spawn.SpawnDualShot();
-    //                break;
-    //            case 4:
-    //                spawn.CancelInvoke("SpawnDualShot");
-    //                spawn.SpawnConeShot();
-    //                break;
-    //            case 5:
-    //                spawn.CancelInvoke("SpawnConeShot");
-    //                spawn.SpawnDiagonal();
-    //                break;
-    //            case 6:
-    //                spawn.CancelInvoke("SpawnDiagonal");
-    //                spawn.SpawnRandom();
-    //                break;
-    //            case 7:
-    //                spawn.CancelInvoke("SpawnRandom");
-    //                spawn.SpawnChrono();
-    //                break;
-    //        }
-    //    }
-    //}
+
+    void OnSelectEnemiesToSpawn()
+    {
+        StartCoroutine(spawn.SpawnEnemies(PlayerPrefs.GetInt("CurEnemies")));
+    }
+
+    #region Brainstom gameplay flow
+    //Game start => Player appear:
+    //  + Start level always = 0
+    //  + Enemies to spawn is enemies that player bought from shop
+    //  + Number of Enemies and spawning speed is base on level
+
+    #endregion
 }

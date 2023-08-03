@@ -12,60 +12,83 @@ public class SpawnerSC : MonoBehaviour
     [SerializeField] BouncingShip bounce;
     [SerializeField] RandomPathShip rand;
 
-    public void SpawnKamikaze()
+    public IEnumerator SpawnEnemies(int enemiesOder)
+    {
+        print(enemiesOder);
+        yield return new WaitForSeconds(1);
+        switch (enemiesOder) 
+        {
+            case 0:
+                Kamikaze();
+                break;
+            case 1:
+                Kamikaze(); 
+                break;
+            case 2:
+                Pershot();
+                break;
+            case 3:
+                Dualshot();
+                break;
+            case 4:
+                Coneshot();
+                break;
+            case 5:
+                DiagonalMover();
+                break;
+            case 6:
+                Randompath();
+                break;
+            case 7:
+                Chronoshift();
+                break;
+        }
+        StartCoroutine(SpawnEnemies(1));
+    }
+    private void Kamikaze()
     {
         float randomX;
         randomX = Random.Range(-3, 3);
         Instantiate(kmkz, new Vector3(randomX, 3, 0), Quaternion.Euler(0, 0, -90f));
         Invoke("SpawnKamikaze", 0.5f);
     }
-
-    public void SpawnPerShot()
+    private void Pershot()
     {
         float randomX;
         randomX = Random.Range(-3, 3);
         Instantiate(per, new Vector3(randomX, 3, 0), Quaternion.Euler(0, 0, 0f));
         Invoke("SpawnPerShot", 1.25f);
     }
-
-    public void SpawnDualShot()
+    private void Dualshot()
     {
-        //Correct
         float randomX;
         randomX = Random.Range(-3, 3);
         Instantiate(dual, new Vector3(randomX, 3, 0), Quaternion.Euler(0, 0, -90f));
         Invoke("SpawnDualShot", 1.5f);
     }
-
-    public void SpawnConeShot()
+    private void Coneshot()
     {
-        //Correct
         float randomX;
         randomX = Random.Range(-3, 3);
         Instantiate(triple, new Vector3(randomX, 3, 0), Quaternion.Euler(0, 0, -90f));
         Invoke("SpawnConeShot", 1.75f);
     }
-
-    public void SpawnDiagonal()
+    private void DiagonalMover()
     {
-        //Correct
         float randomX;
         randomX = Random.Range(-3, 3);
         Instantiate(bounce, new Vector3(randomX, 3,0), Quaternion.Euler(0, 0, 0f)) ;
         Invoke("SpawnDiagonal", 1f);
     }
-    public void SpawnRandom()
+    private void Randompath()
     {
-        //Incorrect
         float randomX;
         randomX = Random.Range(-3, 3);
         Instantiate(rand, new Vector3(randomX, 3, 0), Quaternion.Euler(0, 0, 0f));
         Invoke("SpawnRandom", 2.25f);
     }
-
-    public void SpawnChrono()
+    private void Chronoshift()
     {
-        //Correct
         float randomX;
         randomX = Random.Range(-3, 3);
         Instantiate(chrono, new Vector3(randomX, 3, 0), Quaternion.Euler(0, 0, 0f));

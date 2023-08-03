@@ -84,10 +84,10 @@ public class PlayerSript : MonoBehaviour
     {
         if (ammoCur == maxAmmo)
         {
-            isReload = false;
+            isReload = true;
         }else if (ammoCur == 0)
         {
-            isReload = true;
+            isReload = false;
             do
             {
                 ammoCur++;
