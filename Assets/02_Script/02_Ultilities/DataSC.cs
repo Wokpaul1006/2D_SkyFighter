@@ -32,7 +32,6 @@ public class DataSC : Singleton<DataSC>
     }
     private void SetNewPlayer()
     {
-        print("in set new player");
         if(Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
             nameFistPlay = "PlayerTest" ;
@@ -44,6 +43,11 @@ public class DataSC : Singleton<DataSC>
         PlayerPrefs.SetString("PlayerName", nameFistPlay);
         PlayerPrefs.SetInt("Highscore", 0);
         PlayerPrefs.SetInt("CurEnemies", 0);
+
+        PlayerPrefs.SetInt("CurUpgradeDmg", 0);
+        PlayerPrefs.SetInt("CurUpgradeHP", 0);
+        PlayerPrefs.SetInt("CurUpgradeMgz", 0);
+        PlayerPrefs.SetInt("CurUpgradeRegen", 0);
     }
     public void LoadOldPlayer()
     {
