@@ -8,28 +8,55 @@ public class PlayerSript : MonoBehaviour
 {
     private Vector3 MousePos;
     public int hpCur = 0; //current HP which increase or decrease in gameplay
-    public int ammoCur = 0; //current ammo in amobox;
-    public int apCur = 0;
+    public int ammoCur = 0; //current ammo in amobox visible in gameplay;
+    public int apCur = 0; //current AP visible in gameplay
+    public float reloadAmmoSpdCur;
+    public float reloadAPSpdCur;
+
+    public int ammoMaxLoad;
+    public int hpMaxLoad;
+    public int apMaxLoad;
 
     [SerializeField] PBullet bullet;
-    private int maxHP = 100; //Max HP, even plus any HP pack, max HP will equal this
-    private int maxAmmo = 30;
-    private int maxAP = 100;
-
-    private float reloadAmmoTime;
+    private int baseHP = 100; 
+    private int baseAmmoLoadout = 30;
+    private int baseDamage = 1;
+    private float baseReloadAmmoTime = 0.25f;
+    private float baseReloadAPTime = 0.5f; 
     private bool isReload;
+
+    private int prefDamage; //Damage from PlayerPrefs
+    private int prefHP; //Health from PlayerPrefs
+    private int prefAmmo; //Ammo max load from PlayerPrefs
+    private float prefRecharge; //Racharge max time from PlayerPrefs
     void Start()
     {
+        GetPlayerforStart();
+        SettingStartGame();
+        CaculatingPlayerStat();
+    }
+    private void GetPlayerforStart()
+    {
+        prefDamage = PlayerPrefs.GetInt("CurUpgradeDmg");
+        prefHP = PlayerPrefs.GetInt("CurUpgradeHP");
+        prefAmmo = PlayerPrefs.GetInt("CurUpgradeMgz");
+        prefRecharge = (float)PlayerPrefs.GetInt("CurUpgradeRegen");
+    }
+    private void SettingStartGame()
+    {
         MousePos = transform.position;
-        hpCur = maxHP;
-        ammoCur = maxAmmo;
-        apCur = maxAP;
-        reloadAmmoTime = 0.25f;
 
         isReload = false;
     }
+    private void CaculatingPlayerStat()
+    {
+        hpCur = hpMaxLoad = baseHP * prefHP;
+        ammoCur = ammoMaxLoad =  baseAmmoLoadout * prefAmmo;
+        apCur = 100;
 
-    // Update is called once per frame
+        reloadAmmoSpdCur = baseReloadAmmoTime * prefRecharge;
+        reloadAPSpdCur = baseReloadAPTime * prefRecharge;
+    }
     void Update()
     {
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)

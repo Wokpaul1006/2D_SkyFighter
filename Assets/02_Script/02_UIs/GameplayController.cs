@@ -57,8 +57,8 @@ public class GameplayController : MonoBehaviour
         ammoTxt.text = player.ammoCur.ToString();
         apTxt.text = player.apCur.ToString();
 
-        hpImg.fillAmount = 1;
-        ammoImg.fillAmount = 1;
+        hpImg.fillAmount = player.hpCur/player.hpMaxLoad;
+        ammoImg.fillAmount = player.ammoCur / player.ammoMaxLoad;
         apImg.fillAmount = 0;
     }
     #endregion
