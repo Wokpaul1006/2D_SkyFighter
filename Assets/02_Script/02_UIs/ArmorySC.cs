@@ -107,7 +107,7 @@ public class ArmorySC : MonoBehaviour
 
     public void DamageUpHandle()
     {
-        if(dmgIndex <= 7)
+        if(dmgIndex <= 5)
         {
             dmgIndex++;
             dmgList[dmgIndex].SetActive(true);
@@ -123,18 +123,19 @@ public class ArmorySC : MonoBehaviour
                 curDmgPriceTxt.text = (curDmgPrice * dmgIndex * 10).ToString() + priceUnit;
             }
         }
-        else
+        else if(dmgIndex>= 5)
         {
             curDmgPriceTxt.text = "MAX OUT";
         }
     }
     public void HealthUpHandle()
     {
-        if(hpIndex <= 7)
+        if(hpIndex <= 5)
         {
             hpIndex++;
             hpList[hpIndex].SetActive(true);
             PlayerPrefs.SetInt("CurUpgradeHP", hpIndex);
+            curhpPrice = hpIndex * 10;
 
             if (hpIndex == 1)
             {
@@ -145,20 +146,19 @@ public class ArmorySC : MonoBehaviour
                 curHPPriceTxt.text = (curhpPrice * curhpPrice * 10).ToString() + priceUnit;
             }
         }
-        else
+        else if(hpIndex >= 5)
         {
             curHPPriceTxt.text = "MAX OUT";
         }
-
-
     }
     public void MgzSizeHandle()
     {
-        if(mgzSizeIndex <= 7)
+        if(mgzSizeIndex <= 5)
         {
             mgzSizeIndex++;
             mgzSizeList[mgzSizeIndex].SetActive(true);
             PlayerPrefs.SetInt("CurUpgradeMgz", mgzSizeIndex);
+            curmgzPrice = mgzSizeIndex * 10;
 
             if (mgzSizeIndex == 1)
             {
@@ -169,7 +169,7 @@ public class ArmorySC : MonoBehaviour
                 curMagazineSizeTxt.text = (curmgzPrice * mgzSizeIndex * 10).ToString();
             }
         }
-        else
+        else if (mgzSizeIndex >= 5)
         {
             curMagazineSizeTxt.text = "MAX OUT";
         }
@@ -177,11 +177,12 @@ public class ArmorySC : MonoBehaviour
     }
     public void RechargeUpHandle()
     {
-        if(rechargeIndex <= 7)
+        if(rechargeIndex <= 5 )
         {
             rechargeIndex++;
             rechargeList[rechargeIndex].SetActive(true);
             PlayerPrefs.SetInt("CurUpgradeRegen", rechargeIndex);
+            curRegenPrice = mgzSizeIndex * 10;
 
             if (rechargeIndex == 1)
             {
@@ -192,7 +193,7 @@ public class ArmorySC : MonoBehaviour
                 curRegenPriceTxt.text = (curRegenPrice * rechargeIndex * 10).ToString();
             }
         }
-        else
+        else if (rechargeIndex >= 5)
         {
             curRegenPriceTxt.text = "MAX OUT";
         }

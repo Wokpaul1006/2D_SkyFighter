@@ -49,7 +49,7 @@ public class PlayerSript : MonoBehaviour
             }
         }
 
-        if(ammoCur == 0)
+        if (ammoCur == 0)
         {
             ReloadAmmo();
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShopSC : MonoBehaviour
 {
+    //Enemy panel
     public void OnBuyPerShot()
     {
         PlayerPrefs.SetInt("CurEnemies", 1);
@@ -28,4 +29,9 @@ public class ShopSC : MonoBehaviour
     {
         PlayerPrefs.SetInt("CurEnemies", 6);
     }
+
+    //Player buy panel
+
+
+    //Cash buy panel
 }
