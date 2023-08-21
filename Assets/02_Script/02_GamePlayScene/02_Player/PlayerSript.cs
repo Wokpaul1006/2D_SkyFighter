@@ -109,7 +109,7 @@ public class PlayerSript : MonoBehaviour
     }
     public void ReloadAmmo()
     {
-        if (ammoCur == maxAmmo)
+        if (ammoCur == ammoMaxLoad)
         {
             isReload = true;
         }else if (ammoCur == 0)
@@ -118,7 +118,7 @@ public class PlayerSript : MonoBehaviour
             do
             {
                 ammoCur++;
-            }while(ammoCur < maxAmmo);
+            }while(ammoCur < ammoMaxLoad);
         }
     }
 }

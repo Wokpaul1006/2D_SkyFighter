@@ -8,24 +8,18 @@ public class OptionSC : Singleton<OptionSC>
     [SerializeField] Image onLound, onMute;
 
     [Header("Variables")]
-    private bool isSound;
-    private bool isVibrate;
-    void Start()
-    {
-        OnStartGame();
-    }
-
+    private bool isSound; //manage theme of the game
+    private bool isEffect; //manage effect of the gameplay such like shooting sound or exploding sound
+    private bool isVibrate; //manage vibrate of game when exploision init
+    void Start() => OnStartGame();
     void OnStartGame()
     {
         isSound = true;
         isVibrate = true;
+        isEffect = true;
+
         onLound.gameObject.SetActive(true);
     }
-    void Update()
-    {
-        
-    }
-
     public void OnSoundClick()
     {
         if(isSound == true) 
@@ -43,7 +37,6 @@ public class OptionSC : Singleton<OptionSC>
             onMute.gameObject.SetActive(false);
         }
     }
-
     public void OnVibrateClick()
     {
         if(isVibrate == true) { isVibrate = false; }
@@ -52,5 +45,25 @@ public class OptionSC : Singleton<OptionSC>
             isVibrate = true;
             Handheld.Vibrate();
         }
+    }
+    public void OnLangueClick()
+    {
+        //Change langues function
+    }
+    public void OnProfileClick()
+    {
+        //Alredy set in editor
+    }
+    public void OnFBClick()
+    {
+        //Log in by Facebook
+    }
+    public void OnGoogleClick()
+    {
+        //Login by Gmail
+    }
+    public void OnExitClick()
+    {
+        Application.Quit(0);
     }
 }
