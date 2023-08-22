@@ -8,13 +8,22 @@ public class DataSC : Singleton<DataSC>
     public string nameFistPlay;
     public string playerName;
     public int playerHighscore;
-    private int curEnemies;
+    public int playerTotalScore;
+
+    public int curDmgLevel;
+    public int curHealthLevel;
+    public int curAmmoLevel;
+    public int curRegentLevel;
+
+    private int curEnemiesSelected;
+
     private int hasPlayed; //Use this variable for check FirstPlay.
     void Start()
     {
         hasPlayed = PlayerPrefs.GetInt("HasPlayed");
         OnCheckPlay();
     }
+
     #region Check if Player First Play or not
     private void OnCheckPlay()
     {
@@ -42,6 +51,7 @@ public class DataSC : Singleton<DataSC>
 
         PlayerPrefs.SetString("PlayerName", nameFistPlay);
         PlayerPrefs.SetInt("Highscore", 0);
+        PlayerPrefs.SetInt("Totalscore", 0);
         PlayerPrefs.SetInt("CurEnemies", 0);
 
         PlayerPrefs.SetInt("CurUpgradeDmg", 0);
@@ -54,7 +64,13 @@ public class DataSC : Singleton<DataSC>
         //This function load player information if there are not FIRST PLAY
         playerName = PlayerPrefs.GetString("PlayerName");
         playerHighscore = PlayerPrefs.GetInt("Highscore");
-        curEnemies = PlayerPrefs.GetInt("CurEnemies");
+        playerTotalScore = PlayerPrefs.GetInt("Totalscore");
+        curEnemiesSelected = PlayerPrefs.GetInt("CurEnemies");
+
+        curDmgLevel = PlayerPrefs.GetInt("CurUpgradeDmg");
+        curHealthLevel = PlayerPrefs.GetInt("CurUpgradeHP");
+        curAmmoLevel = PlayerPrefs.GetInt("CurUpgradeMgz");
+        curRegentLevel = PlayerPrefs.GetInt("CurUpgradeRegen");  
     }
     public void ClearPlayer() { PlayerPrefs.DeleteAll(); }
     #endregion
