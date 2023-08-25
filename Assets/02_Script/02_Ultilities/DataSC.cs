@@ -16,6 +16,7 @@ public class DataSC : Singleton<DataSC>
     public int curRegentLevel;
 
     private int curEnemiesSelected;
+    private int curWeaponSelected;
 
     private int hasPlayed; //Use this variable for check FirstPlay.
     void Start()
@@ -53,6 +54,7 @@ public class DataSC : Singleton<DataSC>
         PlayerPrefs.SetInt("Highscore", 0);
         PlayerPrefs.SetInt("Totalscore", 0);
         PlayerPrefs.SetInt("CurEnemies", 0);
+        PlayerPrefs.SetInt("CurWeapon", 0);
 
         PlayerPrefs.SetInt("CurUpgradeDmg", 0);
         PlayerPrefs.SetInt("CurUpgradeHP", 0);
@@ -66,6 +68,7 @@ public class DataSC : Singleton<DataSC>
         playerHighscore = PlayerPrefs.GetInt("Highscore");
         playerTotalScore = PlayerPrefs.GetInt("Totalscore");
         curEnemiesSelected = PlayerPrefs.GetInt("CurEnemies");
+        curWeaponSelected = PlayerPrefs.GetInt("CurWeapon");
 
         curDmgLevel = PlayerPrefs.GetInt("CurUpgradeDmg");
         curHealthLevel = PlayerPrefs.GetInt("CurUpgradeHP");

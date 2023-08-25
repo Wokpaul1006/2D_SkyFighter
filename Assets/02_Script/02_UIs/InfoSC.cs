@@ -20,14 +20,22 @@ public class InfoSC : MonoBehaviour
     {
         data = GameObject.Find("PlayerData").GetComponent<DataSC>();
     }
-    public void SetPlayerInfo(string name, int highScore, int coin)
+    private void Update()
+    {
+        if (gameObject.activeSelf)
+        {
+            SetPlayerInfo();
+            SetPlayerStat();
+        }
+    }
+    public void SetPlayerInfo()
     {
         playerName.text = data.playerName;
         curHighScore.text = data.playerHighscore.ToString();
         totalScore.text = data.playerTotalScore.ToString();
     }
 
-    public void SetPlayerStat(int dmg, int hp, int ammo, int regent)
+    public void SetPlayerStat()
     {
         curDmglvl.text = data.curDmgLevel.ToString();
         curHPLvl.text = data.curHealthLevel.ToString();
