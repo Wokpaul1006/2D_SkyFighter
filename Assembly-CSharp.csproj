@@ -66,6 +66,7 @@
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\EnemiesSC.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\DualShot.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Player\PlayerSript.cs" />
+    <Compile Include="Assets\02_Script\02_UIs\MailerSC.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\RandomPathShip.cs" />
     <Compile Include="Assets\02_Script\02_Ultilities\Singleton.cs" />
     <Compile Include="Assets\02_Script\02_UIs\ShopSC.cs" />

@@ -22,7 +22,7 @@ public class PBullet : Bullet
         else if (collision.gameObject.tag == "Foe")
         {
             OnDisapearFoe();
-            gm.enemiesKilled++;
+            gm.IncreaseScore();
         }
     }
 }

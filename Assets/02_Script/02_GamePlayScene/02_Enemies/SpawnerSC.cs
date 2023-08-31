@@ -14,7 +14,6 @@ public class SpawnerSC : MonoBehaviour
 
     public IEnumerator SpawnEnemies(int enemiesOder)
     {
-        print(enemiesOder);
         yield return new WaitForSeconds(1);
         switch (enemiesOder) 
         {

@@ -7,6 +7,7 @@ using UnityEngineInternal;
 public class PlayerSript : MonoBehaviour
 {
     private Vector3 MousePos;
+    public int dmgCur = 0;
     public int hpCur = 0; //current HP which increase or decrease in gameplay
     public int ammoCur = 0; //current ammo in amobox visible in gameplay;
     public int apCur = 0; //current AP visible in gameplay
@@ -29,6 +30,9 @@ public class PlayerSript : MonoBehaviour
     private int prefHP; //Health from PlayerPrefs
     private int prefAmmo; //Ammo max load from PlayerPrefs
     private float prefRecharge; //Racharge max time from PlayerPrefs
+
+    private int curCoin;
+    private int prefTotalCoin;
     void Start()
     {
         GetPlayerforStart();
@@ -41,6 +45,7 @@ public class PlayerSript : MonoBehaviour
         prefHP = PlayerPrefs.GetInt("CurUpgradeHP");
         prefAmmo = PlayerPrefs.GetInt("CurUpgradeMgz");
         prefRecharge = (float)PlayerPrefs.GetInt("CurUpgradeRegen");
+        prefTotalCoin = PlayerPrefs.GetInt("Totalscore");
     }
     private void SettingStartGame()
     {
@@ -50,9 +55,11 @@ public class PlayerSript : MonoBehaviour
     }
     private void CaculatingPlayerStat()
     {
+        dmgCur = baseDamage * prefDamage;
         hpCur = hpMaxLoad = baseHP * prefHP;
         ammoCur = ammoMaxLoad =  baseAmmoLoadout * prefAmmo;
         apCur = 100;
+        curCoin = 0;
 
         reloadAmmoSpdCur = baseReloadAmmoTime * prefRecharge;
         reloadAPSpdCur = baseReloadAPTime * prefRecharge;
@@ -79,6 +86,16 @@ public class PlayerSript : MonoBehaviour
         if (ammoCur == 0)
         {
             ReloadAmmo();
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Foe")
+        {
+            hpCur -= 25;
+            curCoin++;
+            print(curCoin);
+            CaculatingCoin(curCoin);
         }
     }
     private void OnMoveByTouchScreen()
@@ -120,5 +137,10 @@ public class PlayerSript : MonoBehaviour
                 ammoCur++;
             }while(ammoCur < ammoMaxLoad);
         }
+    }
+    public void CaculatingCoin(int ingameCoin)
+    {
+        prefTotalCoin += ingameCoin;
+        PlayerPrefs.SetInt("Totalscore", prefTotalCoin);
     }
 }

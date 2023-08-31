@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameplayController : MonoBehaviour
 {
@@ -57,9 +58,14 @@ public class GameplayController : MonoBehaviour
         ammoTxt.text = player.ammoCur.ToString();
         apTxt.text = player.apCur.ToString();
 
-        hpImg.fillAmount = player.hpCur/player.hpMaxLoad;
-        ammoImg.fillAmount = player.ammoCur / player.ammoMaxLoad;
-        apImg.fillAmount = 0;
+        hpImg.fillAmount = (float)player.hpCur/player.hpMaxLoad;
+        ammoImg.fillAmount = (float)player.ammoCur / player.ammoMaxLoad;
+        apImg.fillAmount = (float)player.apCur/player.apMaxLoad;
+
+        if(player.hpCur <= 0)
+        {
+            SceneManager.LoadScene("MainScene");
+        }
     }
     #endregion
 
@@ -98,9 +104,15 @@ public class GameplayController : MonoBehaviour
     }
     #endregion
 
-    void OnSelectEnemiesToSpawn()
+    private void OnSelectEnemiesToSpawn()
     {
         StartCoroutine(spawn.SpawnEnemies(PlayerPrefs.GetInt("CurEnemies")));
+    }
+
+    public void IncreaseScore()
+    {
+        enemiesKilled++;
+        player.CaculatingCoin(enemiesKilled);
     }
 
     #region Brainstom gameplay flow

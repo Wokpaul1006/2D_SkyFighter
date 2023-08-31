@@ -12,12 +12,12 @@ public class ShopSC : MonoBehaviour
         curCoinForPurchase = PlayerPrefs.GetInt("Totalscore");
         UpdateCoinText(curCoinForPurchase);
     }
-    private void UpdateCoinText(int valueToUpdate) => coinText.text = valueToUpdate.ToString();
+    private void UpdateCoinText(int valueToUpdate) => coinText.text = valueToUpdate.ToString() + "C";
     #region Enemies Panel
     public void OnBuyPerShot()
     {
         int price = 100;
-        if(CheckBuyForEnemy(price, curCoinForPurchase))
+        if (CheckBuy(price, curCoinForPurchase))
         {
             curCoinForPurchase -= curCoinForPurchase - price;
             UpdateCoinText(curCoinForPurchase);
@@ -27,7 +27,7 @@ public class ShopSC : MonoBehaviour
     public void OnBuyDualShot()
     {
         int price = 200;
-        if (CheckBuyForEnemy(price, curCoinForPurchase))
+        if (CheckBuy(price, curCoinForPurchase))
         {
             curCoinForPurchase -= curCoinForPurchase - price;
             UpdateCoinText(curCoinForPurchase);
@@ -37,7 +37,7 @@ public class ShopSC : MonoBehaviour
     public void OnBuyConeShot()
     {
         int price = 400;
-        if (CheckBuyForEnemy(price, curCoinForPurchase))
+        if (CheckBuy(price, curCoinForPurchase))
         {
             curCoinForPurchase -= curCoinForPurchase - price;
             UpdateCoinText(curCoinForPurchase);
@@ -47,7 +47,7 @@ public class ShopSC : MonoBehaviour
     public void OnBuyBouncer()
     {
         int price = 800;
-        if (CheckBuyForEnemy(price, curCoinForPurchase))
+        if (CheckBuy(price, curCoinForPurchase))
         {
             curCoinForPurchase -= curCoinForPurchase - price;
             UpdateCoinText(curCoinForPurchase);
@@ -57,7 +57,7 @@ public class ShopSC : MonoBehaviour
     public void OnBuyRandompath()
     {
         int price = 1600;
-        if (CheckBuyForEnemy(price, curCoinForPurchase))
+        if (CheckBuy(price, curCoinForPurchase))
         {
             curCoinForPurchase -= curCoinForPurchase - price;
             UpdateCoinText(curCoinForPurchase);
@@ -67,7 +67,7 @@ public class ShopSC : MonoBehaviour
     public void OnBuyChronoshift()
     {
         int price = 3200;
-        if (CheckBuyForEnemy(price, curCoinForPurchase))
+        if (CheckBuy(price, curCoinForPurchase))
         {
             curCoinForPurchase -= curCoinForPurchase - price;
             UpdateCoinText(curCoinForPurchase);
@@ -79,44 +79,98 @@ public class ShopSC : MonoBehaviour
     #region Weapon Panel
     public void OnBuyDoubleBullet()
     {
-
+        int price = 100;
+        if (CheckBuy(price, curCoinForPurchase))
+        {
+            curCoinForPurchase -= curCoinForPurchase - price;
+            UpdateCoinText(curCoinForPurchase);
+            PlayerPrefs.SetInt("CurWeapon", 1);
+        }
     }
     public void OnBuyTripleBullet()
     {
-
-    }
-    public void OnBuyAOEMissle()
-    {
-
-    }
-    public void OnBuyInlineMissle()
-    {
-
-
-    }
-    public void OnBuyProtectShile()
-    {
-
-    }
-    public void OnBuyRoundMissle()
-    {
-
-    }
-    public void OnBuyFreezingTime()
-    {
+        int price = 100;
+        if (CheckBuy(price, curCoinForPurchase))
+        {
+            curCoinForPurchase -= curCoinForPurchase - price;
+            UpdateCoinText(curCoinForPurchase);
+            PlayerPrefs.SetInt("CurWeapon", 1);
+        }
 
     }
     public void OnBuyFanlikeWarhead()
     {
-
+        int price = 100;
+        if (CheckBuy(price, curCoinForPurchase))
+        {
+            curCoinForPurchase -= curCoinForPurchase - price;
+            UpdateCoinText(curCoinForPurchase);
+            PlayerPrefs.SetInt("CurWeapon", 1);
+        }
     }
     #endregion
 
-    //Cash buy panel
-
-    private bool CheckBuyForEnemy(int coditionMoney, int curMoney)
+    #region Buy Ability
+    public void OnBuyAOEMissle()
     {
-        if(coditionMoney <= curMoney)
+        int price = 100;
+        if (CheckBuy(price, curCoinForPurchase))
+        {
+            curCoinForPurchase -= curCoinForPurchase - price;
+            UpdateCoinText(curCoinForPurchase);
+            PlayerPrefs.SetInt("CurAblility", 1);
+        }
+    }
+    public void OnBuyInlineMissle()
+    {
+        int price = 100;
+        if (CheckBuy(price, curCoinForPurchase))
+        {
+            curCoinForPurchase -= curCoinForPurchase - price;
+            UpdateCoinText(curCoinForPurchase);
+            PlayerPrefs.SetInt("CurAblility", 1);
+        }
+    }
+    public void OnBuyProtectShile()
+    {
+        int price = 100;
+        if (CheckBuy(price, curCoinForPurchase))
+        {
+            curCoinForPurchase -= curCoinForPurchase - price;
+            UpdateCoinText(curCoinForPurchase);
+            PlayerPrefs.SetInt("CurAblility", 1);
+        }
+    }
+    public void OnBuyRoundMissle()
+    {
+        int price = 100;
+        if (CheckBuy(price, curCoinForPurchase))
+        {
+            curCoinForPurchase -= curCoinForPurchase - price;
+            UpdateCoinText(curCoinForPurchase);
+            PlayerPrefs.SetInt("CurAblility", 1);
+        }
+    }
+    public void OnBuyFreezingTime()
+    {
+        int price = 100;
+        if (CheckBuy(price, curCoinForPurchase))
+        {
+            curCoinForPurchase -= curCoinForPurchase - price;
+            UpdateCoinText(curCoinForPurchase);
+            PlayerPrefs.SetInt("CurAblility", 1);
+        }
+    }
+    #endregion
+
+    #region Cashing Panel
+
+    #endregion
+
+    //Cash buy panel
+    private bool CheckBuy(int requireMoney, int curMoney)
+    {
+        if (requireMoney <= curMoney)
         {
             return true; //allow buying
         }

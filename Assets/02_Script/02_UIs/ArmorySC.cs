@@ -79,28 +79,28 @@ public class ArmorySC : MonoBehaviour
     {
         for(int i = 0; i <= dmgCur; i++)
         {
-            dmgList[i].SetActive(true);
+            dmgList[i-1].SetActive(true);
         }
     }
     void DecideShowHP()
     {
         for (int i = 0; i <= hpCur; i++)
         {
-            hpList[i].SetActive(true);
+            hpList[i-1].SetActive(true);
         }
     }
     void DecideShowSP()
     {
         for (int i = 0; i <= mgzCur; i++)
         {
-            mgzSizeList[i].SetActive(true);
+            mgzSizeList[i-1].SetActive(true);
         }
     }
     void DecideShowRechager()
     {
         for (int i = 0; i <= rechargeCur; i++)
         {
-            rechargeList[i].SetActive(true);
+            rechargeList[i-1].SetActive(true);
         }
     }
     #endregion
