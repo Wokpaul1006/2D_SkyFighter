@@ -66,21 +66,28 @@ public class PlayerSript : MonoBehaviour
     }
     void Update()
     {
-        if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        OnMoveByMouse();
+        //if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        //{
+        //    OnMoveByMouse();
+        //    if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
+        //    {
+        //        OnAttackNormal();
+        //    }
+        //}
+        //else if (Application.platform == RuntimePlatform.Android)
+        //{
+        //    if (Input.touchCount > 0)
+        //    {
+        //        OnMoveByTouchScreen();
+        //        OnAttackNormal();
+        //    }
+        //}
+
+        if (Input.touchCount > 0)
         {
             OnMoveByMouse();
-            if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
-            {
-                OnAttackNormal();
-            }
-        }
-        else if (Application.platform == RuntimePlatform.Android)
-        {
-            OnMoveByTouchScreen();
-            if (Input.touchCount > 0)
-            {
-                OnAttackNormal();
-            }
+            OnAttackNormal();
         }
 
         if (ammoCur == 0)
@@ -114,6 +121,11 @@ public class PlayerSript : MonoBehaviour
         MousePos = new Vector3(MousePos.x, MousePos.y, 0f);
         Vector3 temp = Vector3.Lerp(transform.position, MousePos, 100 * Time.deltaTime);
         transform.position = temp;
+
+        if (Input.touchCount > 1)
+        {
+            OnAttackNormal();
+        }
     }
     private void OnAttackNormal()
     {
