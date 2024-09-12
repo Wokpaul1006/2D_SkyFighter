@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngineInternal;
 
 public class PlayerSript : MonoBehaviour
 {
@@ -84,9 +83,13 @@ public class PlayerSript : MonoBehaviour
         //    }
         //}
 
+        OnMoveByMouse();
         if (Input.touchCount > 0)
         {
-            OnMoveByMouse();
+            //For mobile
+            OnAttackNormal();
+        }else if (Input.GetKeyDown(KeyCode.Space))
+        {
             OnAttackNormal();
         }
 

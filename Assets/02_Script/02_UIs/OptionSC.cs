@@ -43,7 +43,7 @@ public class OptionSC : Singleton<OptionSC>
         else 
         {
             isVibrate = true;
-            Handheld.Vibrate();
+            //Handheld.Vibrate();
         }
     }
     public void OnLangueClick()

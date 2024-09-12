@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InfoSC : MonoBehaviour
 {
-    [SerializeField] DataSC data;
+    [SerializeField] OmniMN data;
 
     [SerializeField] Text playerName;
     [SerializeField] Text curHighScore;
@@ -18,7 +18,7 @@ public class InfoSC : MonoBehaviour
 
     void Start()
     {
-        data = GameObject.Find("PlayerData").GetComponent<DataSC>();
+        data = GameObject.Find("PlayerData").GetComponent<OmniMN>();
     }
     private void Update()
     {

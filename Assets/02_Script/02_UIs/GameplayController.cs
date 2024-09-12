@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameplayController : MonoBehaviour
 {
     [Header("Objects")]
+    
     [SerializeField] PlayerSript player;
     [SerializeField] SpawnerSC spawn;
     [SerializeField] Text lvlTxt;
@@ -15,6 +16,7 @@ public class GameplayController : MonoBehaviour
     [SerializeField] Image hpImg, ammoImg, apImg;
 
     [Header("Variables")]
+    public static sbyte gameState; //0 is start cutscene, 1 is enter gameplay, 2 is commplete
     public float gpHP, gpAP, gpExp;
     public int gpLevel;
     private int sec, min;
@@ -22,6 +24,7 @@ public class GameplayController : MonoBehaviour
 
     void Start()
     {
+        gameState = 0;
         gpLevel = 1; //Min = 1; Max = ?
         SpawnPlayer();
         OnShowLevel(gpLevel);
@@ -120,6 +123,10 @@ public class GameplayController : MonoBehaviour
     //  + Start level always = 0
     //  + Enemies to spawn is enemies that player bought from shop
     //  + Number of Enemies and spawning speed is base on level
+
+    #endregion
+
+    #region CutScene
 
     #endregion
 }

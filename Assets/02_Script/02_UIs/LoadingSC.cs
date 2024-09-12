@@ -8,31 +8,28 @@ public class LoadingSC : MonoBehaviour
 {
     [Header("Objects")]
     [SerializeField] Slider progressBar;
-    [SerializeField] Image bgShow;
-    [SerializeField] List<Sprite> bg = new List<Sprite>();
+    [SerializeField] OmniMN omniMN;
 
     [Header("Variables")]
     public float target;
     private float loadSpd;
     private void Awake()
     {
-        RandLoadBG();
+        GetPlayerInfors();
     }
     private IEnumerator Start()
     {
-        loadSpd = 1;
+        loadSpd = Random.Range(0.1f, 1f);
         progressBar.value = 0;
         while (progressBar.value < target)
         {
             progressBar.value = Mathf.MoveTowards(progressBar.value, target, loadSpd * Time.deltaTime);
             yield return null;
         }
-        SceneManager.LoadScene("MainScene");
+        omniMN.OnChangeScene(0);
     }
-
-    private void RandLoadBG()
+    private void GetPlayerInfors()
     {
-        int rand = Random.Range(0, bg.Count);
-        bgShow.GetComponent<Image>().sprite = bg[rand];
+
     }
 }
