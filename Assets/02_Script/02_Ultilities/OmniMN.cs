@@ -26,6 +26,7 @@ public class OmniMN : Singleton<OmniMN>
                 SceneManager.LoadScene("1_MainScene");
                 break;
             case 1:
+                print("in load sotry");
                 SceneManager.LoadScene("StoryScene");
                 break;
             case 2:

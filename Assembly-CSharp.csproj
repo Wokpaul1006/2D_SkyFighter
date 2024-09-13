@@ -80,6 +80,7 @@
     <Compile Include="Assets\02_Script\02_GamePlayScene\MainObject.cs" />
     <Compile Include="Assets\02_Script\02_UIs\MainMenuSC.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\SpawnerSC.cs" />
+    <Compile Include="Assets\02_Script\02_UIs\PanelsMN.cs" />
     <Compile Include="Assets\02_Script\02_UIs\MailerSC.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\DualShot.cs" />
     <Compile Include="Assets\02_Script\02_GamePlayScene\02_Enemies\BouncingShip.cs" />
