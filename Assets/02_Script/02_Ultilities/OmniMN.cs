@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class OmniMN : Singleton<OmniMN>
 {
-    //This calss control all back-end activities of client
+    private sbyte curScene;
+    //This class control all back-end activities of client
     void Start()
     {
         hasPlayed = PlayerPrefs.GetInt("HasPlayed");
         OnCheckPlay();
     }
-
-    // Update is called once per frame
-    void Update()
+    void Update() 
     {
-        
+
     }
 
     public void OnChangeScene(sbyte sceneOder)
@@ -26,17 +25,16 @@ public class OmniMN : Singleton<OmniMN>
                 SceneManager.LoadScene("1_MainScene");
                 break;
             case 1:
-                print("in load sotry");
-                SceneManager.LoadScene("StoryScene");
+                SceneManager.LoadScene("2_StoryScene");
                 break;
             case 2:
-                SceneManager.LoadScene("ArenaScene");
+                SceneManager.LoadScene("3_ArenaScene");
                 break;
             case 3:
-                SceneManager.LoadScene("PvPScene");
+                SceneManager.LoadScene("4_PlaygroundPvP");
                 break;
             case 4:
-                SceneManager.LoadScene("");
+                SceneManager.LoadScene("4_PlaygroundPvP");
                 break;
             case 5:
                 //Send request to server that player Quit game
@@ -80,7 +78,7 @@ public class OmniMN : Singleton<OmniMN>
     {
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
-            nameFistPlay = "PlayerTest";
+            nameFistPlay = "Player";
         }
         else if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {

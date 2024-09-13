@@ -3,18 +3,6 @@
   "WorkspaceRootPath": "D:\\Projects\\2D_SkyFighter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_uis\\mainmenusc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_uis\\mainmenusc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|d:\\projects\\2d_skyfighter\\assets\\02_script\\02_uis\\optionsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_uis\\optionsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_uis\\dialougesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_uis\\dialougesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_ultilities\\omnimn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_ultilities\\omnimn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,16 +11,36 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\02_Script\\OmniMN.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|d:\\projects\\2d_skyfighter\\assets\\02_script\\02_uis\\shopsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_uis\\shopsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|d:\\projects\\2d_skyfighter\\assets\\02_script\\02_uis\\mainmenusc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_uis\\mainmenusc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_gameplayscene\\mainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_gameplayscene\\mainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_uis\\panelsmn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_uis\\panelsmn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_uis\\optionsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_uis\\optionsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_uis\\dialougesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_uis\\dialougesc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_uis\\infosc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_uis\\infosc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_gameplayscene\\02_player\\playersript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_gameplayscene\\02_player\\playersript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_gameplayscene\\mainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|solutionrelative:assets\\02_script\\02_gameplayscene\\mainobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2A720696-F25D-451A-D11B-19E65E859175}|Assembly-CSharp.csproj|D:\\Projects\\2D_SkyFighter\\assets\\02_script\\02_uis\\loadingsc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,11 +70,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "ShopSC.cs",
+              "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\ShopSC.cs",
+              "RelativeDocumentMoniker": "Assets\\02_Script\\02_UIs\\ShopSC.cs",
+              "ToolTip": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\ShopSC.cs",
+              "RelativeToolTip": "Assets\\02_Script\\02_UIs\\ShopSC.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T09:04:04.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PanelsMN.cs",
+              "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\PanelsMN.cs",
+              "RelativeDocumentMoniker": "Assets\\02_Script\\02_UIs\\PanelsMN.cs",
+              "ToolTip": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\PanelsMN.cs",
+              "RelativeToolTip": "Assets\\02_Script\\02_UIs\\PanelsMN.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T05:48:37.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "OptionSC.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\OptionSC.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_UIs\\OptionSC.cs",
@@ -74,38 +107,37 @@
               "RelativeToolTip": "Assets\\02_Script\\02_UIs\\OptionSC.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T07:33:36.438Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T07:33:36.438Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "OmniMN.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_Ultilities\\OmniMN.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_Ultilities\\OmniMN.cs",
               "ToolTip": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_Ultilities\\OmniMN.cs",
               "RelativeToolTip": "Assets\\02_Script\\02_Ultilities\\OmniMN.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAIwF8AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T06:50:12.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "MainMenuSC.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\MainMenuSC.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_UIs\\MainMenuSC.cs",
               "ToolTip": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\MainMenuSC.cs",
               "RelativeToolTip": "Assets\\02_Script\\02_UIs\\MainMenuSC.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAUwFkAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T06:48:12.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "DialougeSC.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\DialougeSC.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_UIs\\DialougeSC.cs",
@@ -113,12 +145,11 @@
               "RelativeToolTip": "Assets\\02_Script\\02_UIs\\DialougeSC.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T06:18:55.753Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T06:18:55.753Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Langs.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\Langs.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_UIs\\Langs.cs",
@@ -129,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "GameplayController.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\GameplayController.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_UIs\\GameplayController.cs",
@@ -141,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "PlayerSript.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_GamePlayScene\\02_Player\\PlayerSript.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_GamePlayScene\\02_Player\\PlayerSript.cs",
@@ -149,25 +180,24 @@
               "RelativeToolTip": "Assets\\02_Script\\02_GamePlayScene\\02_Player\\PlayerSript.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAcwF8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T05:08:51.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-12T05:08:51.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "MainObject.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_GamePlayScene\\MainObject.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_GamePlayScene\\MainObject.cs",
               "ToolTip": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_GamePlayScene\\MainObject.cs",
               "RelativeToolTip": "Assets\\02_Script\\02_GamePlayScene\\MainObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T05:09:18.617Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "InfoSC.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\InfoSC.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_UIs\\InfoSC.cs",
@@ -175,12 +205,11 @@
               "RelativeToolTip": "Assets\\02_Script\\02_UIs\\InfoSC.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T13:10:51.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T13:10:51.899Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "OmniMN.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\OmniMN.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\OmniMN.cs",
@@ -191,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "DataSC.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_Ultilities\\DataSC.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_Ultilities\\DataSC.cs",
@@ -203,7 +232,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "OmniMN.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\OmniMN.cs",
               "RelativeDocumentMoniker": "Assets\\OmniMN.cs",
@@ -215,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "LoadingSC.cs",
               "DocumentMoniker": "D:\\Projects\\2D_SkyFighter\\Assets\\02_Script\\02_UIs\\LoadingSC.cs",
               "RelativeDocumentMoniker": "Assets\\02_Script\\02_UIs\\LoadingSC.cs",
