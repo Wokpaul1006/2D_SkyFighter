@@ -20,12 +20,13 @@ public class Broodlings : EBullet
     {
         if(collision.gameObject.tag == "Player")
         {
-            //arcadeCtr.UpdadeEnemyKill();
+            player.OnTakeDamage(damage);
+            arcadeCtr.UpdadeEnemyKill();
             Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "PAmmo" || collision.gameObject.tag == "PMelee")
         {
-            //arcadeCtr.UpdadeEnemyKill();
+            arcadeCtr.UpdadeEnemyKill();
             Destroy(gameObject);
         }
     }

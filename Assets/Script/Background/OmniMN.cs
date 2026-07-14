@@ -31,29 +31,35 @@ public class OmniMN : Singleton<OmniMN>
     void Start()
     {
         SettingStart();
+        OnCheckPlay();
         toDay = DateTime.Today.Day.ToString();
         versionTxt.text = Application.version.ToString();
-        dataControl.UpdateFirsrtPlay(); //confirm player played
     }
-    public void OnChangeScene(int sceneOder)
+    public void OnChangeScene(sbyte sceneOder)
     {
-        print("scenOrder = " + sceneOder);
         switch (sceneOder)
         {
-            case 0:
-                SceneManager.LoadScene("1.Loading");
+            case 0: //To Mainmenu
+                SceneManager.LoadScene("2.CentralScene");
                 break;
             case 1:
-                SceneManager.LoadScene("2.Menu");
-                gameMode = 0;
+                SceneManager.LoadScene("3.AmouryScene");
+                gameMode = 1; //Arcade
                 break;
             case 2:
-                SceneManager.LoadScene("3.PlayArcade");
-                gameMode = 1;
+                SceneManager.LoadScene("5.MapScene");
+                gameMode = 2; //To Map
                 break;
             case 3:
-                SceneManager.LoadScene("4.PlayLevel");
-                gameMode = 2;
+                SceneManager.LoadScene("4.PrivateDormScene"); 
+                gameMode = 3; //To Private Dorm
+                break;
+            case 5:
+                SceneManager.LoadScene("6.SetupPlayer");
+                break;
+            case 6:
+                //Send request to server that player Quit game
+                Application.Quit();
                 break;
         }
     }
@@ -75,6 +81,17 @@ public class OmniMN : Singleton<OmniMN>
     }
 
     #region Check if Player First Play or not
+    private void OnCheckPlay()
+    {
+        if (hasPlayed == 0)
+        {
+            //Case of first play, set this field to 1 mean not first play any more
+            PlayerPrefs.SetInt("HasPlayed", 1);
+            SetNewPlayer();
+        }
+        else if (hasPlayed == 1) LoadOldPlayer(); //Case of not First Play
+    }
+    private void SetNewPlayer() => dataControl.SetNewPlayer();
     public void LoadOldPlayer() => dataControl.LoadOldPlayer();
     #endregion
 

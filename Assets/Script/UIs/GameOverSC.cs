@@ -7,8 +7,8 @@ public class GameOverSC : MonoBehaviour
 {
     [SerializeField] OmniMN genCtr;
     [HideInInspector] DataSC dataCtr;
-    [HideInInspector] LevelPlaySC storyCtr;
-    [HideInInspector] GameplayController arcadeCtr;
+    [HideInInspector] ArcadeGameplaySC arcadeCtr;
+    [HideInInspector] GameplayController storyCtr;
     void Start()
     {
         genCtr = GameObject.Find("GeneralMN").GetComponent<OmniMN>();
@@ -19,25 +19,15 @@ public class GameOverSC : MonoBehaviour
     public void OnMainMenu()
     {
         //Inter Ads Sometime
-        genCtr.OnChangeScene(1);
+        genCtr.OnChangeScene(0);
+    }
+    public void OnQuitGame() 
+    {
+        Application.Quit();
     }
     public void OnContinue()
     {
-        print("Game mode = " + genCtr.gameMode);
         //Load Reward Ads here
-        if(genCtr.gameMode == 1)
-        {
-            //Arcade
-            genCtr.OnChangeScene(2);
-        }
-        else if(genCtr.gameMode == 2)
-        {
-            //LevelPlay
-            genCtr.OnChangeScene(3);
-        }
-    }
-    public void OnContinueByAds()
-    {
-
+        genCtr.OnChangeScene(1);
     }
 }

@@ -8,108 +8,102 @@ public class GameplayController : MonoBehaviour
 {
     [Header("Objects")]
     [HideInInspector] OmniMN genCtr;
-    [HideInInspector] DataSC data;
-    [SerializeField] List<Transform> defPos = new List<Transform>();
     [SerializeField] PlayerSC player;
-    [SerializeField] List<SpawnerSC> spawn = new List<SpawnerSC>();
-    [SerializeField] Text lvlTxt, pointTxt, startgameCountDownTxt;
-    [SerializeField] GameObject countdownPnl;
-
-    [HideInInspector] public List<Vector3> playerPos = new List<Vector3>();
+    [SerializeField] SpawnerSC spawn;
+    [SerializeField] Text lvlTxt;
+    [SerializeField] Text minTxt, secTxt;
+    [SerializeField] Text hpTxt, ammoTxt, apTxt;
+    [SerializeField] Image hpImg, ammoImg, apImg;
 
     [Header("Variables")]
-    public int gLevel, startgameCountdown;
+    public static sbyte gameState; //0 is start cutscene, 1 is enter gameplay, 2 is commplete
+    public float gpHP, gpAP, gpExp;
+    public int gpLevel;
+    private int sec, min;
     public int enemiesKilled;
-    public bool isPause;
-    private int arcadeLife = 3;
-    public int arcadeLv, arcadeScore, targetLv;
+
     void Start()
     {
-        startgameCountdown = 5;
         genCtr = GameObject.Find("GeneralMN").GetComponent<OmniMN>();
-        data = GameObject.Find("OBJ_DataCtr").GetComponent<DataSC>();
-        SetupPlayerPos();
+        gameState = 0;
+        gpLevel = 1; //Min = 1; Max = ?
         SpawnPlayer();
-        isPause = true;
-        Invoke(nameof(EnablePlayGame), 5f);
-        InvokeRepeating(nameof(CountdownStartGame), 0f, 1f);
-        UpdateUIArcade();
+        OnShowLevel(gpLevel);
+        OnSelectEnemiesToSpawn();
+        StartCoroutine(CountSec());
     }
 
-    private void SpawnPlayer() => player = Instantiate(player, playerPos[2], Quaternion.identity);
-    private void SetupPlayerPos()
+    private void Update()
     {
-        playerPos.Add(new Vector3(-2, -3, 0));
-        playerPos.Add(new Vector3(-1, -3, 0));
-        playerPos.Add(new Vector3(0, -3, 0));
-        playerPos.Add(new Vector3(1, -3, 0));
-        playerPos.Add(new Vector3(2, -3, 0));
+        OnUpdateLevel();
+        OnUpdatePlayerStatus();
     }
-    private void EnablePlayGame() { isPause = false; }
-    public void OnOutOfHP()
-    {
-        if (arcadeLife > 0)
-        {
-            arcadeLife--;
-            //heartList[arcadeLife].gameObject.SetActive(false);
-        }
-        else if (arcadeLife <= 0)
-        {
-            genCtr.PlayDeadSound();
-            OnOutOfLife();
-        }
-    }
-    private void OnOutOfLife()
-    {
-        genCtr.OnShowGameOver();
-        OnCountPointOnFinal(arcadeScore);
-    }
-    public void IncreaseScore(int score)
-    {
-        int tempScore = arcadeScore + score;
-        arcadeScore = tempScore;
-        if (arcadeScore == targetLv)
-        {
-            arcadeLv++;
-            DetermineLevel();
-        }
-        UpdateUIArcade();
-    }
-    private void DetermineLevel()
-    {
-        //Call each time meet target score codition
-        //Generate next objective
-        //Decide which happen in next level
-        if (arcadeLv == 1)
-        {
-            targetLv = 10;
-        }
-        else if (arcadeLv > 1 && arcadeScore == targetLv)
-        {
-            targetLv = arcadeLv * 10;
-        }
-        //spawnerCtr.UpdateCurrentLevelArcade(arcadeLv);
-    }
-    public void OnBuyDefPoint()
-    {
 
-    }
-    private void CountdownStartGame()
+    #region Handle gameplay activity
+    private void SpawnPlayer() => player = Instantiate(player, Vector3.zero, Quaternion.identity);
+    private void OnShowLevel(int inputLvl) => lvlTxt.text = gpLevel.ToString();
+    private void OnUpdateLevel()
     {
-        startgameCountdown--;
-        startgameCountDownTxt.text = startgameCountdown.ToString();
-        if (startgameCountdown <= 0) countdownPnl.SetActive(false);
+        if(enemiesKilled == 10)
+        {
+            gpLevel = 2;
+            OnShowLevel(gpLevel);
+        }else if(enemiesKilled == gpLevel * 10)
+        {
+            gpLevel++;
+            enemiesKilled = 0;
+            OnShowLevel(gpLevel);
+        }
     }
-    public void UpdateUIArcade()
+    private void OnUpdatePlayerStatus()
     {
-        lvlTxt.text = arcadeLv.ToString();
-        pointTxt.text = arcadeScore.ToString(); ;
+        hpTxt.text = player.hpCur.ToString();
+        ammoTxt.text = player.ammoCur.ToString();
+        apTxt.text = player.apCur.ToString();
+
+        //hpImg.fillAmount = (float)player.hpCur/player.hpMaxLoad;
+        //ammoImg.fillAmount = (float)player.ammoCur / player.ammoMaxLoad;
+        //apImg.fillAmount = (float)player.apCur/player.apMaxLoad;
+
+        if (player.hpCur <= 0) genCtr.OnChangeScene(0);
     }
-    public void OnCountPointOnFinal(int value)
+    #endregion
+
+    #region UIs activities
+    private IEnumerator CountSec()
     {
-        //call only when done
-        int tempScore;
-        tempScore = data.pCoin + value;
-        data.UpdateCoin(tempScore);
+        yield return new WaitForSeconds(1);
+        sec++;
+        if (sec == 60) { CountMin(); }
+        StartCoroutine(CountSec());
     }
+    private void CountMin()
+    {
+        min++;
+        sec = 0;
+    }
+    #endregion
+
+    private void OnSelectEnemiesToSpawn()
+    {
+        //StartCoroutine(spawn.SpawnEnemies(PlayerPrefs.GetInt("CurEnemies")));
+    }
+
+    public void IncreaseScore()
+    {
+        enemiesKilled++;
+        //player.CaculatingCoin(enemiesKilled);
+    }
+
+    #region Brainstom gameplay flow
+    //Game start => Player appear:
+    //  + Start level always = 0
+    //  + Enemies to spawn is enemies that player bought from shop
+    //  + Number of Enemies and spawning speed is base on level
+
+    #endregion
+
+    #region CutScene
+
+    #endregion
 }

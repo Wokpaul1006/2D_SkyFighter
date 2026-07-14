@@ -8,30 +8,23 @@ public class MainMenuSC : MonoBehaviour
 {
     [HideInInspector] OmniMN genCtr;
     [HideInInspector] DataSC data;
-    [SerializeField] Text gemTxt, coinTxtl, curLevel;
+    [SerializeField] Text gemTxt, coinTxtl;
 
     public List<GameObject> panels = new List<GameObject>();
-    private int cointToShow, gemToShow, levelToShow;
+    public WarningPanelSC warningPnl;
+    private int cointToShow, gemToShow;
     private void Start()
     {
         genCtr = GameObject.Find("GeneralMN").GetComponent<OmniMN>();
         data = GameObject.Find("OBJ_DataCtr").GetComponent<DataSC>();
-
+        warningPnl = GameObject.Find("PNL_WarningPnl").GetComponent<WarningPanelSC>();
+        LoadUserInRuntime();
         ClearAllPanels();
-        OnSetUI();
     }
-    public void OnSetUI()
+    private void OnSetUI()
     {
-        gemToShow = data.pGems;
-        cointToShow = data.pCoin;
-        levelToShow = data.pLevelPlay;
-
-        print("data.Pcoin = " + data.pCoin);
-        print("in set UI, coin = " + cointToShow);
-
         gemTxt.text = gemToShow.ToString()+"C";
         coinTxtl.text = cointToShow.ToString()+"D";
-        curLevel.text = "LEVEL " + levelToShow.ToString();
     }
 
     private void ClearAllPanels()
@@ -40,24 +33,49 @@ public class MainMenuSC : MonoBehaviour
         {
             if(panels[i].activeSelf) panels[i].gameObject.SetActive(false);
         }
+        warningPnl.gameObject.SetActive(false);
+    }
+    public void LoadUserInRuntime()
+    {
+        //Call everytime in-game need to load data
+        gemToShow = data.playerGems;
+        cointToShow = data.playerCoin;
+        OnSetUI();
     }
     #region Switch Scene & Panels
-    public void ToArcade()
+    public void ToAmoury()
     {
-        print("in call to Arcade");
+        genCtr.OnChangeScene(1);
+    }
+    public void ToCommandeck()
+    {
+        print("to private dorm");
+        genCtr.OnChangeScene(3);
+    }
+    public void ToFlightDeck()
+    {
+        print("in to flright deck");
         genCtr.OnChangeScene(2);
     }
-    public void ToLevelPlay()
+    public void ToCentralScene()
     {
-        genCtr.OnChangeScene(3);
+        genCtr.OnChangeScene(0);
     }
     public void OnToOption() => genCtr.OnShowOption();
     public void OnUserInfor() => genCtr.OnShowInforPanel();
-    public void OnShowPanels(int caseIndex)
+    public void OnShowWarningPanel(int callOrder, int contentOrder)
     {
-        if (caseIndex == -1) { ClearAllPanels(); }
-        else if (caseIndex != -1) panels[caseIndex].gameObject.SetActive(true);
+        warningPnl.gameObject.SetActive(true);
+        warningPnl.ShowContent(callOrder, contentOrder);
     }
+    public void OnShowPanels()
+    {
+        ClearAllPanels();
+    }
+    #endregion
+
+    #region Panel Define
+
     #endregion
     
 }

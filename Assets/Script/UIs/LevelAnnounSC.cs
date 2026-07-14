@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class LevelAnnounSC : MonoBehaviour
 {
     [HideInInspector] OmniMN genCtr;
-    [HideInInspector] LevelPlaySC storyCtr;
-    [HideInInspector] GameplayController arcadeCtr;
+    [HideInInspector] ArcadeGameplaySC arcadeCtr;
+    [HideInInspector] GameplayController storyCtr;
     [SerializeField] Text levelTxt, objectivetxt;
     int curLv, gameMode;
     string curObjective;
@@ -18,10 +18,9 @@ public class LevelAnnounSC : MonoBehaviour
         switch (gameMode)
         {
             case 1:
-                arcadeCtr = GameObject.Find("ArcadeMN").GetComponent<GameplayController>();
+                arcadeCtr = GameObject.Find("OBJ_ArcadeModeMN").GetComponent<ArcadeGameplaySC>();
                 break;
             case 2:
-                storyCtr = GameObject.Find("LevePlayMN").GetComponent<LevelPlaySC>();
                 break;
         }
     }

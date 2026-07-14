@@ -20,7 +20,7 @@ public class PauseSC : Singleton<PauseSC>
     public void OnMainMenu()
     {
         //Inter Ads Sometime
-        genCtr.OnChangeScene(1);
+        genCtr.OnChangeScene(0);
         genCtr.OnShowPause(false);
     }
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class EBullet : MonoBehaviour
 {
     [HideInInspector] internal OmniMN genCtr;
-    [HideInInspector] internal LevelPlaySC storyCtr;
-    [HideInInspector] internal GameplayController arcadeCtr;
+    [HideInInspector] internal ArcadeGameplaySC arcadeCtr;
+    [HideInInspector] internal GameplayController storyCtr;
     private Vector3 targetPos;
 
     internal int damage;
@@ -18,10 +18,9 @@ public class EBullet : MonoBehaviour
         switch (genCtr.gameMode)
         {
             case 1:
-                arcadeCtr = GameObject.Find("ArcadeMN").GetComponent<GameplayController>();
+                arcadeCtr = GameObject.Find("OBJ_ArcadeModeMN").GetComponent<ArcadeGameplaySC>();
                 break;
             case 2:
-                storyCtr = GameObject.Find("LevePlayMN").GetComponent<LevelPlaySC>();
                 break;
         }
         Invoke(nameof(SelfDestruct), 10f);
@@ -58,7 +57,7 @@ public class EBullet : MonoBehaviour
     }
     internal void OnMoveToPlayer(float spd)
     {
-        //targetPos = arcadeCtr.curPos;
+        targetPos = arcadeCtr.curPos;
         Vector3 direction = (targetPos - transform.position).normalized; // direction to player
         gameObject.transform.position += direction * moveSpd * Time.deltaTime;
     }

@@ -22,6 +22,7 @@ public class SalvitaSC : EBullet
     {
         if (collision.gameObject.tag == "Player")
         {
+            player.OnTakeDamage(damage);
             Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "PAmmo" || collision.gameObject.tag == "PMelee")
